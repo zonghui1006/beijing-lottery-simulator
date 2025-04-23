@@ -1,16 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./carousel.scss";
-import img1 from "./images/ka/1.JPG";
-import img2 from "./images/ka/2.JPG";
-import img3 from "./images/ka/3.JPG";
-import img4 from "./images/ka/4.JPG";
-import img5 from "./images/ka/5.JPG";
-import img6 from "./images/ka/6.JPG";
-import img7 from "./images/ka/7.JPG";
-import img8 from "./images/ka/8.JPG";
-import img9 from "./images/ka/9.JPG";
 
-const images = [img1, img2, img3, img4, img5, img6, img7, img8, img9];
+const images = [];
 
 const bgColors = ["#f0f4ff", "#ffe4e1", "#e0ffe0", "#fff0c1", "#fce4ff"];
 

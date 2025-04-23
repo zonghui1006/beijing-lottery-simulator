@@ -1,0 +1,54 @@
+.carousel-wrapper {
+  padding: 40px;
+  background: linear-gradient(135deg, #f0f4ff, #ffffff);
+  text-align: center;
+  width: 100%;
+  min-height: 100vh; /* 确保背景覆盖整个页面 */
+  box-sizing: border-box;
+  overflow-x: hidden;
+  transition: background 0.4s ease-in-out;
+}
+
+.carousel-image-container {
+  display: flex;
+  justify-content: center;
+}
+
+.carousel-image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+/* carousel.scss */
+
+@keyframes flashShake {
+  0% {
+    opacity: 0;
+    transform: translateX(-5px);
+  }
+  25% {
+    opacity: 1;
+    transform: translateX(5px);
+  }
+  50% {
+    opacity: 0;
+    transform: translateX(-5px);
+  }
+  75% {
+    opacity: 1;
+    transform: translateX(5px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.carousel-title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 24px;
+  color: #1a73e8;
+  animation: flashShake 0.6s ease-in-out infinite; /* 使用抖动字体效果 */
+}

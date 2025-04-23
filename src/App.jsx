@@ -4,12 +4,20 @@ function App() {
   const [times, setTimes] = useState(6);
   const [rate, setRate] = useState(0.04);
   const [result, setResult] = useState(null);
+  const [copied, setCopied] = useState(false);
 
   const calculateProbability = () => {
     const p = rate / 100;
     const n = times;
     const probability = 1 - Math.pow(1 - p, n);
     setResult((probability * 100).toFixed(4));
+    setCopied(false);
+  };
+
+  const copyResult = () => {
+    if (result) {
+      navigator.clipboard.writeText(`${result}%`).then(() => setCopied(true));
+    }
   };
 
   return (
@@ -103,6 +111,21 @@ function App() {
           >
             {result}%
           </div>
+
+          <button
+            onClick={copyResult}
+            style={{
+              marginTop: 12,
+              padding: "8px 16px",
+              border: "1px solid #ccc",
+              borderRadius: 6,
+              backgroundColor: copied ? "#d4edda" : "#f8f9fa",
+              cursor: "pointer",
+              fontSize: 14,
+            }}
+          >
+            {copied ? "已复制到剪贴板 ✅" : "复制中签结果"}
+          </button>
         </div>
       )}
     </div>
